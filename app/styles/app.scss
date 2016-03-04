@@ -4,6 +4,20 @@ $default-color: "800" !default;
 
 @import 'ember-paper';
 
-.md-sidenav-left {
-  min-height: 100vh;
+body {
+  $blue-grey-500: #607D8B;
+
+  .md-sidenav-left {
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: $blue-grey-500;
+  }
+
 }
