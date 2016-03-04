@@ -1,0 +1,13 @@
+{{#paper-card}}
+  <h2>Reviews</h2>
+  {{#paper-card-content}}
+    {{#paper-button raised=true primary=true action="addReview"}}Add a Review{{/paper-button}}
+      {{#if addReview}}
+        <!-- Add stars functionality here -->
+        {{paper-input label="Name" value=name}}
+        {{paper-input textarea=true label="Write More" value=explanation}}
+
+        {{#paper-button raised=true accent=true action="newReview"}}Add New Review{{/paper-button}}
+      {{/if}}
+  {{/paper-card-content}}
+{{/paper-card}}
