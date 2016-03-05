@@ -2,21 +2,26 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('book', params.book_id);
+    return Ember.RSVP.hash({
+      book: this.store.findRecord('book', params.book_id),
+    });
   },
 
   actions: {
     transitionTo(route) {
       this.transitionTo(route);
     },
-    newReview(params) {
+
+    saveReview(params) {
+      var route = this;
       var newReview = this.store.createRecord('review', params);
       var book = params.book;
       book.get('reviews').addObject(newReview);
       newReview.save().then(function() {
-        return book.save();
+        return book.save().then(function() {
+          route.refresh();
+        });
       });
-      this.transitionTo('book', params.book);
-    },
+    }
   }
 });

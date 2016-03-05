@@ -8,3 +8,21 @@
     </p>
   {{/paper-card-content}}
 {{/paper-card}}
+
+{{#paper-card}}
+  {{#paper-card-content}}
+    {{new-review book=book saveReview="saveReview"}}
+    <h2>Reviews</h2>
+  {{/paper-card-content}}
+  {{#paper-card-content}}
+    {{#each sortedReviews as |review|}}
+      {{#paper-card class="review-card"}}
+        {{#paper-card-content}}
+          <h2>{{review.rating}}</h2>
+          <h3>{{review.name}}</h3>
+          <p>{{review.explanation}}</p>
+        {{/paper-card-content}}
+      {{/paper-card}}
+    {{/each}}
+  {{/paper-card-content}}
+{{/paper-card}}

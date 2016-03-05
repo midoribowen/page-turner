@@ -1,4 +1,6 @@
-$font-family: Garamond, serif !default;
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
+
+$font-family: Libre Baskerville, serif !default;
 $primary: "blue-grey" !default;
 $accent: "indigo" !default;
 $default-color: "800" !default;
@@ -6,7 +8,9 @@ $default-color: "800" !default;
 @import 'ember-paper';
 
 body {
+  $blue-grey-50: #ECEFF1;
   $blue-grey-500: #607D8B;
+  $blue-grey-800: #37474F;
 
   .md-sidenav-left {
     min-height: 100vh;
@@ -19,6 +23,11 @@ body {
 
   a:hover {
     color: $blue-grey-500;
+  }
+
+  .review-card {
+    background-color: $blue-grey-800;
+    color: $blue-grey-50;
   }
 
 }
