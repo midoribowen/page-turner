@@ -1,13 +1,25 @@
 {{#paper-card}}
   <h2>Reviews</h2>
   {{#paper-card-content}}
-    {{#paper-button raised=true primary=true action="addReview"}}Add a Review{{/paper-button}}
-      {{#if addReview}}
-        <!-- Add stars functionality here -->
-        {{paper-input label="Name" value=name}}
-        {{paper-input textarea=true label="Write More" value=explanation}}
 
-        {{#paper-button raised=true accent=true action="newReview"}}Add New Review{{/paper-button}}
+    {{#paper-button raised=true primary=true action="addReview"}}Add a Review{{/paper-button}}
+
+      {{#if addReview}}
+        {{#paper-card}}
+          {{#paper-card-content}}
+            {{paper-icon "star-border"}}{{paper-icon "star-border"}}{{paper-icon "star-border"}}{{paper-icon "star-border"}}{{paper-icon "star-border"}}
+            {{paper-input label="Enter Star Rating Number" value=rating type="number" min="1" max="5"}}
+            {{paper-input label="Name" value=name}}
+            {{paper-input textarea=true label="Write More" value=explanation}}
+
+            {{#paper-button raised=true accent=true action="newReview"}}Add New Review{{/paper-button}}
+          {{/paper-card-content}}
+        {{/paper-card}}
       {{/if}}
+
+    {{#each review as |review|}}
+          {{review-tile review=review transitionTo="transitionTo"}}
+    {{/each}}
+
   {{/paper-card-content}}
 {{/paper-card}}
