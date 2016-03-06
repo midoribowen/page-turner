@@ -5,7 +5,8 @@ export default Ember.Component.extend({
     addBook() {
       var params = {
         title: this.get('title'),
-        author: this.get('author'),
+        last_name: this.get('last_name'),
+        first_name: this.get('first_name'),
         summary: this.get('summary'),
         image_url: this.get('image_url'),
       };
