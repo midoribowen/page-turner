@@ -8,6 +8,7 @@
     </p>
     {{paper-divider}}
     <p>Amazon's Price: {{format-price book.amazon_price}}</p>
+    <button class="add-book" {{action 'add' book}}>Add to Your Reading List</button>
   {{/paper-card-content}}
 {{/paper-card}}
 
@@ -18,7 +19,7 @@
   {{/paper-card-content}}
   {{#paper-card-content}}
     {{#each sortedReviews as |review|}}
-      {{#paper-card class="review-card"}}
+      {{#paper-card class="sub-card"}}
         {{#paper-card-content}}
           {{review-rating review}}
           <p>{{review.rating}} Stars</p>

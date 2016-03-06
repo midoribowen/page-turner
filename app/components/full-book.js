@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  readingList: Ember.inject.service(),
+
   sortProperties: ['rating:desc'],
   sortedReviews: Ember.computed.sort('book.reviews', 'sortProperties'),
 
@@ -9,6 +11,10 @@ export default Ember.Component.extend({
   }),
 
   actions: {
+    add(item) {
+      this.get('readingList').add(item);
+    },
+    
     saveReview(review, params) {
       this.sendAction('saveReview', review, params);
     },

@@ -25,9 +25,16 @@ body {
     color: $blue-grey-500;
   }
 
-  .review-card {
+  .sub-card {
     background-color: $blue-grey-800;
     color: $blue-grey-50;
+  }
+
+  .add-book {
+    background-color: $blue-grey-800;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 5px 10px 5px;
   }
 
 }
