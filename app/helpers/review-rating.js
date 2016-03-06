@@ -2,22 +2,25 @@ import Ember from 'ember';
 
 export function reviewRating(params) {
 
-  // CURRENT BUG: Stars are not displaying properly. Are displaying as a string rather than as ember-paper handlebar icons.
-  //   POSSIBLE FIX: Use bootstrap instead.
+  // CURRENT BUG: Stars are not displaying properly - all ratings are displaying the first if statement (1 star)
 
-  var review = params[0].get('rating');
+  var bookRating = params[0].get('rating');
+  var filledStar = "&#9733;";
+  var emptyStar = "&#9734;";
 
-  if(review = 5) {
-  return Ember.String.htmlSafe("{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}");
-} else if(review = 4) {
-    return Ember.String.htmlSafe("{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star-border'}}");
-  } else if(review = 3) {
-      return Ember.String.htmlSafe("{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}");
-  } else if(review = 2) {
-      return Ember.String.htmlSafe("{{paper-icon 'star'}}{{paper-icon 'star'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}");
-  } else if(review = 1) {
-      return Ember.String.htmlSafe("{{paper-icon 'star'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}{{paper-icon 'star-border'}}");
+  if (bookRating = 1) {
+    return Ember.String.htmlSafe(filledStar + emptyStar + emptyStar + emptyStar + emptyStar);
+  } else if (bookRating = 2) {
+    return Ember.String.htmlSafe(filledStar + filledStar + emptyStar + emptyStar + emptyStar);
+  } else if (bookRating = 3) {
+    return Ember.String.htmlSafe(filledStar + filledStar + filledStar + emptyStar + emptyStar);
+  } else if (bookRating = 4) {
+    return Ember.String.htmlSafe(filledStar + filledStar + filledStar + filledStar + emptyStar);
+  } else if (bookRating = 5) {
+    return Ember.String.htmlSafe(filledStar + filledStar + filledStar + filledStar + filledStar);
   }
+
 }
+
 
 export default Ember.Helper.helper(reviewRating);
