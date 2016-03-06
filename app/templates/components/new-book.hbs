@@ -7,6 +7,8 @@
     {{paper-input label="First Name" value=first_name}}
     {{paper-input textarea=true label="Summary" value=summary}}
     {{paper-input label="Image URL" value=image_url}}
+    <label for="amazon_price">Amazon Price</label>
+    {{paper-input label="Enter Amount in Pennies (e.g. Enter '100' for $1.00)" value=amazon_price type="number"}}
 
     {{#paper-button raised=true primary=true action="addBook"}}Add New Book{{/paper-button}}
   {{/paper-card-content}}

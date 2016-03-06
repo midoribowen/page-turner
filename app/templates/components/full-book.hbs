@@ -6,6 +6,8 @@
     <p>
       {{book.summary}}
     </p>
+    {{paper-divider}}
+    <p>Amazon's Price: {{format-price book.amazon_price}}</p>
   {{/paper-card-content}}
 {{/paper-card}}
 
@@ -20,6 +22,7 @@
         {{#paper-card-content}}
           {{review-rating review}}
           <p>{{review.rating}} Stars</p>
+          {{paper-divider}}
           <h3>{{review.name}}</h3>
           <p>{{review.explanation}}</p>
         {{/paper-card-content}}

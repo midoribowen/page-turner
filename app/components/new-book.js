@@ -9,6 +9,7 @@ export default Ember.Component.extend({
         first_name: this.get('first_name'),
         summary: this.get('summary'),
         image_url: this.get('image_url'),
+        amazon_price: this.get('amazon_price')
       };
       this.sendAction('addBook', params);
     }
