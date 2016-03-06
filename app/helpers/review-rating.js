@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export function reviewRating(params) {
+
+  // CURRENT BUG: Stars are not displaying properly. Are displaying as a string rather than as ember-paper handlebar icons.
+  //   POSSIBLE FIX: Use bootstrap instead.
+
   var review = params[0].get('rating');
 
   if(review = 5) {
