@@ -21,8 +21,7 @@
     {{#each sortedReviews as |review|}}
       {{#paper-card class="sub-card"}}
         {{#paper-card-content}}
-          {{review-rating review}}
-          <p>{{review.rating}} Stars</p>
+          {{review-rating review.rating}}
           {{paper-divider}}
           <h3>{{review.name}}</h3>
           <p>{{review.explanation}}</p>
